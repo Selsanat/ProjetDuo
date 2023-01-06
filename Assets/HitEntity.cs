@@ -12,6 +12,10 @@ public class HitEntity : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<EntityHealth>().CurrentHealth -= _damage;
+            if (other.gameObject.GetComponent<EntityHealth>().CurrentHealth <=0)
+            {
+                Destroy(other.gameObject);
+            }
         }
     }
 
