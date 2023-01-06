@@ -49,7 +49,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     /// <summary>
-    /// Exemple de déclenchement d'un évènement qui active un effet, puis le desactive après un délai
+    /// Exemple de dï¿½clenchement d'un ï¿½vï¿½nement qui active un effet, puis le desactive aprï¿½s un dï¿½lai
     /// </summary>
     [Button("GOOO")]
     void HealthUpdate()
@@ -67,9 +67,9 @@ public class PlayerMove : MonoBehaviour
 
     IEnumerator MoveRoutine()
     {
-        // Déclenchement de l'event OnStartMove, manière "basique"
+        // Dï¿½clenchement de l'event OnStartMove, maniï¿½re "basique"
         //if (OnStartMove != null) OnStartMove.Invoke();
-        // Manière plus agréable d'utilisation, totalement équivalent à la ligne au dessus.
+        // Maniï¿½re plus agrï¿½able d'utilisation, totalement ï¿½quivalent ï¿½ la ligne au dessus.
         OnStartMove?.Invoke();
 
         while (true)
