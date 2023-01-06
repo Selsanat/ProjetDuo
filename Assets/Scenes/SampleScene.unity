@@ -280,6 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f72b57696a4fd44686ee9ab3191a519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 0
 --- !u!95 &58043778
 Animator:
   serializedVersion: 4
@@ -718,6 +719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 20
+  CurrentHealth: 0
 --- !u!4 &395592695
 Transform:
   m_ObjectHideFlags: 0
@@ -1366,6 +1368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f72b57696a4fd44686ee9ab3191a519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 0
 --- !u!1 &1044316933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,7 +1647,7 @@ GameObject:
   - component: {fileID: 1349007870}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1771,6 +1774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+  CurrentHealth: 0
 --- !u!114 &1349007870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1795,6 +1799,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcca2186ac283d449a0bab40d85dce73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attack: {fileID: -7293794816792774634, guid: 7465c15ff2f50e14295da1356a60d5be,
+    type: 3}
+  _damage: 0
+  _onEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _onEventPost:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1576631183
 PrefabInstance:
   m_ObjectHideFlags: 0
