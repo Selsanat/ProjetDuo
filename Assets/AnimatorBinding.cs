@@ -12,14 +12,23 @@ using UnityEngine.SceneManagement;
 public class AnimatorBinding : MonoBehaviour
 {
     [SerializeField] InputActionReference _move;
+    [SerializeField] InputActionReference _attack;
     [SerializeField] Animator anim;
     public event Action OnStartMove;
     // Start is called before the first frame update
     void Start()
     {
         _move.action.started += StartMove;
-        _move.action.performed += UpdateMove;
         _move.action.canceled += StopMove;
+        _attack.action.started += StartAttack;
+        _attack.action.canceled += StopAttack;
+    }
+    private void OnDestroy()
+    {
+        _move.action.started -= StartMove;
+        _move.action.canceled -= StopMove;
+        _attack.action.started -= StartAttack;
+        _attack.action.canceled -= StopAttack;
     }
 
     // Update is called once per frame
@@ -32,9 +41,13 @@ public class AnimatorBinding : MonoBehaviour
         anim.SetBool("Walking", true);
     }
 
-    private void UpdateMove(InputAction.CallbackContext obj)
+    private void StartAttack(InputAction.CallbackContext obj)
     {
-        print(2);
+        anim.SetBool("Attack", true);
+    }
+    private void StopAttack(InputAction.CallbackContext obj)
+    {
+        anim.SetBool("Attack", false);
     }
     private void StopMove(InputAction.CallbackContext obj)
     {
