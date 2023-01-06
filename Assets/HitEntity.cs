@@ -5,7 +5,7 @@ using UnityEngine;
 public class HitEntity : MonoBehaviour
 {
 
-    [SerializeField] int _damage;
+    [SerializeField] int _damage =50;
 
     private void OnTriggerEnter(Collider other)
     {

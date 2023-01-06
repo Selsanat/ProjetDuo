@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
 {
 
     [SerializeField] InputActionReference _attack;
-    public float _damage = 50f;
+    public int _damage = 50;
 
     public event Action OnStartAttack;
     public event Action<int> OnHealthUpdate;
