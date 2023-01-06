@@ -14,6 +14,18 @@ public class EntityHealth : MonoBehaviour
         CurrentHealth = MaxHealth;
     }
 
+    private void Update()
+    {
+        if (CurrentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+                if (CurrentHealth >= MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
+    }
+
     
 
 
