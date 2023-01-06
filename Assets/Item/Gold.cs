@@ -11,6 +11,7 @@ public class Gold : Item
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<EntityGold>().CurrentGold += GoldValue;
+            GoldUI._golds = other.gameObject.GetComponent<EntityGold>().CurrentGold;
             Destroy(gameObject);
         }
     }
