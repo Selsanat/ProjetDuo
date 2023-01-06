@@ -5,9 +5,9 @@ using UnityEngine;
 public class EntityHealth : MonoBehaviour
 {
 
-    public int MaxHealth;
+    public int MaxHealth = 100;
 
-    public int CurrentHealth ;
+    public int CurrentHealth = 100 ;
 
     private void Awake()
     {

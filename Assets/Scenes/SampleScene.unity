@@ -718,8 +718,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31386448ed24ef4a834e9e8d54ae1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 0
-  CurrentHealth: 0
+  MaxHealth: 100
+  CurrentHealth: 100
 --- !u!4 &395592695
 Transform:
   m_ObjectHideFlags: 0
@@ -1645,6 +1645,7 @@ GameObject:
   - component: {fileID: 1349007871}
   - component: {fileID: 1349007869}
   - component: {fileID: 1349007870}
+  - component: {fileID: 1349007872}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1774,8 +1775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31386448ed24ef4a834e9e8d54ae1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 0
-  CurrentHealth: 0
+  MaxHealth: 100
+  CurrentHealth: 100
 --- !u!114 &1349007870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1811,6 +1812,20 @@ MonoBehaviour:
   _onEventPost:
     m_PersistentCalls:
       m_Calls: []
+--- !u!136 &1349007872
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349007864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1576631183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2490,6 +2505,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _move: {fileID: 7317242067884208208, guid: 7465c15ff2f50e14295da1356a60d5be, type: 3}
+  _attack: {fileID: -7293794816792774634, guid: 7465c15ff2f50e14295da1356a60d5be,
+    type: 3}
   anim: {fileID: 1794143068}
 --- !u!95 &1794143068 stripped
 Animator:
