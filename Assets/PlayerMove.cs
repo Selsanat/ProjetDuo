@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] InputActionReference _move;
     [SerializeField] float _speed;
+    [SerializeField] Transform joueur;
 
     // Event pour les dev
     public event Action OnStartMove;
@@ -75,6 +76,8 @@ public class PlayerMove : MonoBehaviour
         {
             yield return new WaitForFixedUpdate();
             transform.Translate(new Vector3(JoystickDirection.x, 0, JoystickDirection.y) * _speed * Time.fixedDeltaTime);
+            
+            joueur.rotation = Quaternion.Slerp(joueur.rotation, Quaternion.LookRotation(new Vector3(JoystickDirection.x, 0, JoystickDirection.y)), Time.deltaTime*10);
         }
     }
 
