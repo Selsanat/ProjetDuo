@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Gold : Item
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int GoldValue = 100;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<EntityGold>().CurrentGold += GoldValue;
+            Destroy(gameObject);
+        }
     }
 }

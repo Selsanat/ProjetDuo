@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PowerUp : Item
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int PowerUpValue = 50;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<EntityHealth>().MaxHealth += PowerUpValue;
+            other.gameObject.GetComponent<EntityHealth>().CurrentHealth += PowerUpValue;
+            Destroy(gameObject);
+        }
     }
 }
